@@ -1,0 +1,221 @@
+<!--
+Letao Zhang — Chinese–English Clinical Interpreter
+Single-file static portfolio (index.html) — bilingual (English / 中文)
+
+How to use:
+1. Save this file as `index.html` in a new GitHub repository named `your-username.github.io`.
+2. Commit and push to GitHub. In a few minutes your site will be live at https://your-username.github.io.
+3. To use a custom domain, add a file named CNAME containing your domain (e.g. letaozhang.com) to the repo root and update DNS (CNAME www -> your-username.github.io or A records if using apex) at your domain registrar.
+
+Notes:
+- Replace placeholder images in the `images/` folder (filenames used: images/photo1.jpg, photo2.jpg, photo3.jpg).
+- Replace contact handles and URLs where indicated.
+- This file contains inline CSS and JS so it's easy to preview locally.
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Letao Zhang — Chinese–English Clinical Interpreter | 张乐陶 - 临床口译</title>
+  <meta name="description" content="Letao Zhang — Chinese–English Clinical Interpreter. Clinical, legal and educational interpreting expertise. / 中文-英文 临床口译，具备临床、法律和教育口译经验。">
+
+  <!-- Inline playful colorful CSS -->
+  <style>
+    :root{
+      --bg: #fff;
+      --muted:#556;
+      --accent1:#FF7043; /* orange */
+      --accent2:#42A5F5; /* blue */
+      --accent3:#66BB6A; /* green */
+      --card:#fbfbff;
+      --glass: rgba(255,255,255,0.6);
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(120deg, #fff 0%, #f6fbff 100%);color:#123;}
+    header{backdrop-filter: blur(6px);position:sticky;top:0;z-index:30;background:linear-gradient(90deg, rgba(255,255,255,0.72), rgba(255,255,255,0.6));border-bottom:1px solid rgba(18,30,50,0.06)}
+    .container{max-width:1000px;margin:0 auto;padding:28px}
+    .nav{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:22px}
+    nav a{margin-left:12px;text-decoration:none;color:var(--muted);font-weight:600}
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;padding:36px 0}
+    .card{background:var(--card);padding:22px;border-radius:14px;box-shadow:0 6px 20px rgba(16,24,40,0.06)}
+
+    h1{margin:0;font-size:28px}
+    .headline{color:var(--accent2);font-weight:700}
+    .muted{color:var(--muted)}
+
+    .bio p{line-height:1.6}
+    .sr-list{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .chip{padding:8px 12px;border-radius:999px;background:linear-gradient(90deg, rgba(255,255,255,0.8), rgba(255,255,255,0.6));border:1px solid rgba(18,30,50,0.04);font-weight:600}
+
+    /* sections */
+    section{padding:48px 0}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .edu, .exp{display:flex;flex-direction:column;gap:12px}
+
+    /* gallery */
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .gallery img{width:100%;height:160px;object-fit:cover;border-radius:10px}
+
+    footer{padding:24px 0;text-align:center;color:var(--muted);font-size:13px}
+
+    /* responsive */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr;}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:480px){
+      .gallery{grid-template-columns:1fr}
+    }
+
+    /* small callouts */
+    .accent{color:var(--accent1);font-weight:700}
+    .btn{display:inline-block;background:linear-gradient(90deg,var(--accent2),var(--accent1));color:white;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+
+    .lang-toggle{font-size:13px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">LZ</div>
+        <div>
+          <div style="font-weight:800">Letao Zhang</div>
+          <div style="font-size:12px;color:var(--muted)">张乐陶 — Chinese / English Interpreter</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <nav>
+          <a href="#about">About / 关于</a>
+          <a href="#work">Work / 经验</a>
+          <!-- TODO <a href="#gallery">Gallery / 照片</a> -->
+          <a href="#contact">Contact / 联系</a>
+        </nav>
+        <div class="lang-toggle">中 / EN</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <div class="card">
+          <h1>Letao Zhang <span class="headline">— Chinese–English Clinical Interpreter</span></h1>
+          <p class="muted" style="margin-top:8px">Clinical, legal and educational interpreting expertise. 具备临床、法律和教育口译经验。</p>
+
+          <div class="bio" style="margin-top:16px">
+            <p><strong>About / 关于</strong></p>
+            <p>I am a professional Chinese-English Interpreter with experience in clinical, legal, and educational settings. I deliver accurate, confidential interpretations under pressure while maintaining cultural sensitivity and patient-centered communication.</p>
+            <p>我是一名专业的中英口译员，拥有临床、法律和教育领域的口译经验。能够在高压和保密环境中保持准确传译，注重文化敏感性与以病人为中心的沟通。</p>
+
+            <div class="sr-list">
+              <div class="chip">Education / 教育: Baruch</div>
+              <div class="chip">Experience / 经验: 5 years</div>
+              <div class="chip">Specialty / 专长: Clinical • Legal • Educational</div>
+            </div>
+
+            <div style="margin-top:16px">
+              <a class="btn" href="#contact">Contact / 联系</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card" style="text-align:center">
+          <!-- TODO: Replace with your headshot: images/photo1.jpg -->
+          <!-- <img src="images/photo1.jpg" alt="Letao Zhang headshot" style="width:100%;height:320px;object-fit:cover;border-radius:10px;margin-bottom:12px"> -->
+          <div style="font-weight:700;font-size:16px">Letao Zhang / 张乐陶</div>
+          <div style="color:var(--muted);font-size:13px">Chinese–English Clinical Interpreter</div>
+          <div style="margin-top:12px;color:var(--muted);font-size:13px">Based in New York / 居住地：纽约 </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="work">
+      <div class="card">
+        <h2>Work Experience / 工作经历</h2>
+        <p class="muted">5 years of professional interpreting experience across hospitals, legal proceedings, and educational settings. Trained in medical terminology, patient confidentiality (HIPAA-aware), and consecutive & simultaneous interpreting techniques.</p>
+        <p class="muted">拥有5年专业口译经验，覆盖医院、法律程序和教育场景。熟悉医学术语、病患保密要求（HIPAA意识）以及交替与同声传译技巧。</p>
+
+        <div style="margin-top:12px" class="grid-2">
+          <div class="exp card">
+            <strong>Sample Assignments / 代表性工作</strong>
+            <ul>
+              <li>Clinical rounds and patient consultations — hospitals and clinics. / 临床查房与病患随访 — 医院与门诊。</li>
+              <li>Legal, under cover operations and proffer meetings. / 法律陈述与客户面谈。</li>
+              <li>Educational assessments and parent-teacher conferences. / 教育评估与家长会。</li>
+            </ul>
+          </div>
+
+          <div class="edu card">
+            <strong>Education / 教育</strong>
+            <p><strong>Baruch College</strong><br>Bachelor Degree, Business Communication, 2022</p>
+
+            <!-- <p style="margin-top:8px"><strong>Certifications / 证书</strong><br>English: (e.g., Medical Interpreter Certification — replace with yours)<br>中文：如有医务口译证书或相关资质，请在此补充。</p> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TODO<section id="gallery">
+      <div class="card">
+        <h2>Photo Gallery / 工作照片</h2>
+        <p class="muted">English: A few photos from assignments. Replace these placeholders with your photos in the images/ folder. / 中文：以下为工作照片示例，请用 images/ 文件夹中的实际照片替换占位图。</p>
+        <div class="gallery" style="margin-top:12px">
+          <img src="images/photo2.jpg" alt="assignment photo 1">
+          <img src="images/photo3.jpg" alt="assignment photo 2">
+          <img src="images/photo4.jpg" alt="assignment photo 3">
+        </div>
+      </div>
+    </section> -->
+
+    <section id="contact">
+      <div class="card">
+        <h2>Contact / 联系方式</h2>
+        <p class="muted">Available for clinical, legal, and educational interpreting assignments. For booking or inquiries, reach out via the channels below.</p>
+        <p class="muted">可承接临床、法律及教育口译任务。如需预约或咨询，请通过以下方式联系。</p>
+
+        <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap">
+          <div class="chip">小红书: <strong>桃子🍑 Lotus</strong> / ID: 6806974696</div>
+          <div class="chip">Email / 邮箱: <strong>lotusle198@gmail.com</strong> </div>
+        </div>
+
+        <!-- <p style="margin-top:12px;color:var(--muted);font-size:13px">Tip: to protect privacy, replace visible handles with an image or a contact form if preferred. / 小贴士：如需保护隐私，可以使用图片或联系表单代替公开账号名。</p> -->
+
+      </div>
+    </section>
+
+    <footer>
+      <div class="muted">© <strong>Letao Zhang</strong> — Chinese–English Clinical Interpreter • 张乐陶 • Last updated: <!-- Insert date here -->
+      </div>
+    </footer>
+  </main>
+
+  <!-- Minimal JS for smooth scroll and small interactions -->
+  <script>
+    // Smooth scrolling for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        const id = a.getAttribute('href');
+        const el = document.querySelector(id);
+        if(el){ el.scrollIntoView({behavior:'smooth',block:'start'}); }
+      })
+    })
+
+    // If images are missing, use colored placeholders (so preview looks good)
+    document.querySelectorAll('img').forEach(img=>{
+      img.onerror = ()=>{
+        img.style.background = 'linear-gradient(135deg,var(--accent1),var(--accent2))';
+        img.src = 'data:image/svg+xml;utf8,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect width="100%" height="100%" fill="#ffffff"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="24" fill="#ffffff">Placeholder</text></svg>');
+      }
+    })
+  </script>
+</body>
+</html>
